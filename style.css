@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, .wkr-example {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: monospace;
+  font-size: 1rem;
+  color: #161616;
+}
+
+.btn {
+  font-family: inherit;
+  padding: 5px 10px;
+  border: 0;
+  background: #f7e900;
+  box-shadow: 2px 2px 0 #9e9500;
+  font-size: 13px;
+  cursor: pointer;
+  color: #9e9500;
+}
+
+.btn--danger {
+  color: white;
+  background: #da001c;
+  box-shadow: 2px 2px 0 #8a0516
+}
+
+.btn:hover {
+  -webkit-filter: brightness(90%);
+}
+
+.wkr-example {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wkr-example__pikachu {
+  margin: 20px auto;
+  width: 200px;
+  height: 100px;
+  background: url('https://media.giphy.com/media/kuWN0iF9BLQKk/giphy.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: slide 5s linear infinite
+}
+
+.wkr-example__output {
+  border: 0;
+  background: #f1f1f1;
+  text-align: center;
+  padding: 5px;
+  font-weight: 100;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 430px) {
+  .wkr-example__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .wkr-example__pikachu {
+    animation-duration: 2s;
+  }
+
+  .wkr-example .btn {
+    margin-bottom: 10px;
+  }
+
+  .wkr-example .btn:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+@keyframes slide {
+  0% { margin-left: -100%; }
+  100% { margin-left: 100%; }
+}
