@@ -15,3 +15,16 @@ withoutButton.addEventListener('click', _ => {
   for (var i = 0; i < 1e9; i++) result = i
   outputElement.innerHTML = `Done!`
 })
+
+// Run with Web Worker
+workerButton.addEventListener('click', _ => {
+  const worker = document.querySelector('#myWorker').textContent
+  const workerData = new Blob([worker], { type: "text/javascript" })
+  const myWorker = new Worker(window.URL.createObjectURL(workerData))
+
+  myWorker.addEventListener('message', e => {
+    outputElement.innerHTML = e.data
+  })
+
+  myWorker.postMessage('')
+})

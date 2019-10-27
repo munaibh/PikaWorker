@@ -17,6 +17,13 @@
       <h3 class="wkr-example__output">Give the yellow buttons a whack!</h3>
     </div>
   </div>
+  <script id="myWorker" type="text/js-worker">
+    let result;
+    self.addEventListener('message', e => {
+      for (var i = 0; i < 1e9; i++) result = i;
+      self.postMessage(`Done!`);
+    }, false);
+  </script>
   <script src="scripts.js"></script>
 </body>
 </html>
